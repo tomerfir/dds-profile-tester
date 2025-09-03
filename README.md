@@ -7,7 +7,6 @@ This project allows you to:
 
 - RTI Connext DDS Professional 7.3.0 (or compatible version)
 - RTI Connext DDS x64Win64VS2017 target libraries
-- Visual Studio 2022 with x64 C++ v143 toolkit installed
 - A valid RTI Connext DDS license
 
 ## Usage
@@ -18,7 +17,7 @@ This project allows you to:
 - Each argument should be a path to a valid RTI Connext DDS XML configuration file.
 
 ## Building
-
+You must have Visual Studio 2022 with x64 C++ v143 toolkit installed
 1. Clone this repository
 2. Set up your RTI Connext DDS environment
 3. Build with Visual Studio
@@ -27,9 +26,9 @@ This project allows you to:
 
 ## RTI Connext DDS Professional
 
-This project uses RTI Connext DDS Professional, which is © 1996-2025 Real-Time Innovations, Inc. All rights reserved.
+This project uses RTI Connext DDS Professional, which is ¬© 1996-2025 Real-Time Innovations, Inc. All rights reserved.
 
-- RTI, Real-Time Innovations, Connext, Connext Drive, NDDS, the RTI logo, 1RTI, and the phrase ìYour Systems. Working as one.î are registered trademarks, trademarks, or service marks of Real-Time Innovations, Inc.
+- RTI, Real-Time Innovations, Connext, Connext Drive, NDDS, the RTI logo, 1RTI, and the phrase ‚ÄúYour Systems. Working as one.‚Äù are registered trademarks, trademarks, or service marks of Real-Time Innovations, Inc.
 - The software described in this project is furnished solely under and subject to RTI's standard terms and conditions available at [https://www.rti.com/terms](https://www.rti.com/terms) and in accordance with your License Acknowledgement Certificate (LAC) and Maintenance and Support Certificate (MSC), except to the extent otherwise agreed to in writing by RTI.
 - RTI software may contain independent, third-party software or code that are subject to third-party license terms and conditions, including open source license terms and conditions. Copies of applicable third-party licenses and notices are located at [https://community.rti.com/documentation](https://community.rti.com/documentation). It is your responsibility to ensure that your use of third-party software complies with the corresponding third-party license terms and conditions.
 
