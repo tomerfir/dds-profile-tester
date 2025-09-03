@@ -1,0 +1,28 @@
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/7.3.0/rti_dds_profiles.xsd">
+  <types>
+    <const name="KEY_MAX_LEN" type="long" value="64"/>
+    <const name="VALUE_MAX_LEN" type="long" value="2048"/>
+    <struct name="KeyValuePair">
+      <member name="id" type="int64" key="true" />
+      <member name="key" type="string" stringMaxLength="KEY_MAX_LEN" key="true" />
+      <member name="value" type="string" stringMaxLength="VALUE_MAX_LEN" />
+    </struct>
+  </types>
+  <domain_library name="domain_library">
+    <domain name="domain" domain_id="10">
+      <register_type name="KeyValuePairType" type_ref ="KeyValuePair" />
+      <topic name="EnvironmentTopic" register_type_ref="KeyValuePairType" />
+    </domain>
+  </domain_library>
+  <domain_participant_library name="domain_participant_library">
+    <domain_participant name="participant" domain_ref="domain_library::domain">
+      <publisher name="publisher">
+        <data_writer name="writer" topic_ref="EnvironmentTopic"/>
+      </publisher>
+      <subscriber name="subscriber">
+        <data_reader name="reader" topic_ref="EnvironmentTopic" />
+      </subscriber>
+    </domain_participant>
+  </domain_participant_library>
+</dds>

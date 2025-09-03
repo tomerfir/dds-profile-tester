@@ -1,0 +1,33 @@
+﻿<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="https://community.rti.com/schema/7.3.0/rti_dds_qos_profiles.xsd"
+     version="7.3.0">
+
+  <types>
+    <struct name="Shape">
+      <member name="color" stringMaxLength="128" type="string" key="true"/>
+      <member name="x" type="int32"/>
+      <member name="y" type="int32"/>
+      <member name="shapesize" type="int32"/>
+    </struct>
+  </types>
+  <domain_library name="ExampleDomainLibrary">
+    <domain name="ExampleDomain" domain_id="0">
+      <register_type name="Shape" type_ref="Shape"/>
+      <topic name="Square" register_type_ref="Shape"/>
+    </domain>
+  </domain_library>
+  <domain_participant_library name="ExampleParticipantLibrary">
+    <domain_participant name="ExamplePublicationParticipant"
+      domain_ref="ExampleDomainLibrary::ExampleDomain">
+      <publisher name="ExamplePublisher">
+        <data_writer name="ShapeWriter" topic_ref="Square"/>
+      </publisher>
+    </domain_participant>
+    <domain_participant name="ExampleSubscriptionParticipant"
+      domain_ref="ExampleDomainLibrary::ExampleDomain">
+      <subscriber name="ExampleSubscriber">
+        <data_reader name="ShapeReader" topic_ref="Square"/>
+      </subscriber>
+    </domain_participant>
+  </domain_participant_library>
+</dds>
